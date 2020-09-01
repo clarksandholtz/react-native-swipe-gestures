@@ -3,7 +3,7 @@ declare module 'react-native-swipe-gestures' {
   import {
     PanResponderGestureState,
     ViewProps,
-    PanResponder
+    PanResponderInstance
   } from 'react-native';
 
   export interface GestureRecognizerProps extends ViewProps {
@@ -13,7 +13,7 @@ declare module 'react-native-swipe-gestures' {
     onSwipeDown?(gestureState: PanResponderGestureState): void;
     onSwipeLeft?(gestureState: PanResponderGestureState): void;
     onSwipeRight?(gestureState: PanResponderGestureState): void;
-    panResponder?: PanResponder
+    panResponder?: PanResponderInstance
   }
 
   interface GestureRecognizerConfig {
