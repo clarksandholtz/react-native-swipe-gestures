@@ -38,14 +38,14 @@ class GestureRecognizer extends Component {
     this._panResponder = PanResponder.create({
       onStartShouldSetPanResponder: shouldSetResponder,
       onMoveShouldSetPanResponder: shouldSetResponder,
-      ...(props.panResponder && {
-        onPanResponderTerminationRequest: props.panResponder.onPanResponderTerminationRequest,
-        onStartShouldSetPanResponderCapture: props.panResponder.onStartShouldSetPanResponderCapture,
-        onPanResponderGrant: props.panResponder.onPanResponderGrant,
+      ...(this.props.panResponder && {
+        onPanResponderTerminationRequest: this.props.panResponder.panHandlers.onResponderTerminationRequest,
+        onStartShouldSetPanResponderCapture: this.props.panResponder.panHandlers.onStartShouldSetResponderCapture,
+        onPanResponderGrant: this.props.panResponder.panHandlers.onResponderGrant,
       }),
       onPanResponderRelease: () => {
-       if (props.panResponder) {
-         props.panResponder.onPanResponderRelease()
+       if (this.props.panResponder) {
+         this.props.panResponder.panHandlers.onResponderRelease()
        }
        responderEnd()
       },
