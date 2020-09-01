@@ -2,7 +2,8 @@ declare module 'react-native-swipe-gestures' {
   import { Component } from 'react';
   import {
     PanResponderGestureState,
-    ViewProps
+    ViewProps,
+    PanResponder
   } from 'react-native';
 
   export interface GestureRecognizerProps extends ViewProps {
@@ -12,6 +13,7 @@ declare module 'react-native-swipe-gestures' {
     onSwipeDown?(gestureState: PanResponderGestureState): void;
     onSwipeLeft?(gestureState: PanResponderGestureState): void;
     onSwipeRight?(gestureState: PanResponderGestureState): void;
+    panResponder?: PanResponder
   }
 
   interface GestureRecognizerConfig {
@@ -35,6 +37,13 @@ declare module 'react-native-swipe-gestures' {
   }
 
   class GestureRecognizer extends Component<GestureRecognizerProps> {}
+
+  export type swipeDirections = {
+    SWIPE_UP: "SWIPE_UP",
+    SWIPE_DOWN: "SWIPE_DOWN",
+    SWIPE_LEFT: "SWIPE_LEFT",
+    SWIPE_RIGHT: "SWIPE_RIGHT"
+  }
 
   export default GestureRecognizer;
 }
