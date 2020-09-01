@@ -41,7 +41,7 @@ class GestureRecognizer extends Component {
       onMoveShouldSetPanResponder: shouldSetResponder,
       onPanResponderRelease: () => {
        if (props.panResponder) {
-         panResponder.onPanResponderRelease()
+         props.panResponder.onPanResponderRelease()
        }
        responderEnd()
       },
