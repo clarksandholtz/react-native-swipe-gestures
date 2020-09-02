@@ -38,7 +38,8 @@ declare module 'react-native-swipe-gestures' {
 
   class GestureRecognizer extends Component<GestureRecognizerProps> {}
 
-  export enum SwipeDirections {
+  // This is hacky and dumb. I just need to switch this repo to typescript.
+  export enum swipeDirections {
     SWIPE_UP = "SWIPE_UP",
     SWIPE_DOWN = "SWIPE_DOWN",
     SWIPE_LEFT = "SWIPE_LEFT",
